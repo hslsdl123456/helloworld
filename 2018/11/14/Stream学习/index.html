@@ -3,7 +3,7 @@
 <a id="more"></a>
 <p>用Stream API就是一句代码:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String s = &quot;testing&quot; ;</span><br><span class="line">s.chars().mapToObj(c -&gt; (char)c).forEach(System.out::println);</span><br></pre></td></tr></table></figure></p>
 <p>需要说明的是直接foreach打印出来的是字符码，所以需要mapToObj方法将每一个字符码都转为char类型。  </p>
-<h2 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h2><p><div align="center"><br><img src="/space/2018/11/14/Stream学习/stream.jpg" title="stream API流程"><br></div><br>要注意的是stream API的中间操作并不会立即执行，调用中间操作只会生成一个标记了该操作的stream，最后调用结束操作时才会执行所用操作。    </p>
+<h2 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h2><p><div align="center"><br><img src="/2018/11/14/Stream学习/stream.jpg" title="stream API流程"><br></div><br>要注意的是stream API的中间操作并不会立即执行，调用中间操作只会生成一个标记了该操作的stream，最后调用结束操作时才会执行所用操作。    </p>
 <h3 id="创建流"><a href="#创建流" class="headerlink" title="创建流"></a>创建流</h3><ol>
 <li>通过 Collection 系列集合提供的方法 stream() 或者 parallelStream()</li>
 <li><p>由数组创建流<br>通过 Arrays中的静态方法 stream() 创建数据源 。<br>static <t> Stream <t> stream(T[] array): 返回一个流  </t></t></p>
