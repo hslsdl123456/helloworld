@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><meta name="generator" content="Hexo 3.8.0"><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><meta name="viewport" content="width=device-width, initial-scale=1"><title>预排序遍历树算法</title><link rel="shortcut icon" href="/images/avatar.png"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="stylesheet" href="//cdn.bootcss.com/highlight.js/9.2.0/styles/github.min.css"><script src="//cdn.bootcss.com/highlight.js/9.2.0/highlight.min.js"></script></head><body><nav class="main-nav"><a href="/">Home</a><a href="/archives">Archives</a></nav><div class="profile"><section id="wrapper"><header id="header"><img class="4x" id="avatar" src="/images/avatar.png"><h2>天生我柴</h2><h4>庸人自扰</h4><h1></h1><h2></h2></header></section></div><section class="post" id="wrapper"><article><header><h1>预排序遍历树算法</h1><h2 class="headline">Jun 08, 2020 11:05·1.2k words
+<!DOCTYPE html><html><head><meta name="generator" content="Hexo 3.8.0"><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><meta name="viewport" content="width=device-width, initial-scale=1"><title>预排序遍历树算法</title><link rel="shortcut icon" href="/images/avatar.png"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="stylesheet" href="//cdn.bootcss.com/highlight.js/9.2.0/styles/github.min.css"><script src="//cdn.bootcss.com/highlight.js/9.2.0/highlight.min.js"></script></head><body><nav class="main-nav"><a href="/">Home</a><a href="/archives">Archives</a></nav><div class="profile"><section id="wrapper"><header id="header"><img class="4x" id="avatar" src="/images/avatar.png"><h2>天生我柴</h2><h4>庸人自扰</h4><h1></h1><h2></h2></header></section></div><section class="post" id="wrapper"><article><header><h1>预排序遍历树算法</h1><h2 class="headline">Jun 08, 2020 11:05·1.2k words
 ·4 minutes read<span class="tags"></span></h2></header><div id="toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#正文"><span class="toc-text">正文</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#预排序遍历树算法"><span class="toc-text">预排序遍历树算法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#参考"><span class="toc-text">参考</span></a></li></ol></div><section id="post-body"><div style="width:70%;margin:auto" align="center"><br>    <img src="/2020/06/08/modified-preorder-tree-traversal-algorithm/timg.jpg" title="tree"><br></div>   
 
 <h1 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h1><p>如何将层级结构数据存进平面结构的数据库中？常见做法有四种:</p>
@@ -36,13 +36,40 @@ insert into tt2 (line,id,level) values (10,&apos;L&apos;,4);
 <li><a href="https://www.iteye.com/blog/drinkjava2-2353983" target="_blank" rel="noopener">发明了一种新的树结构数据库存储方案</a> </li>
 <li><a href="https://blog.csdn.net/liwenxia626/article/details/81316747" target="_blank" rel="noopener">mysql左右值无限分类原理及实现</a></li>
 </ul>
-</section><nav id="post-nav"><span class="prev"><a href="/2020/07/31/python-yield/"><span class="arrow">←</span>Newer Posts</a></span><span class="next"><a href="/2020/04/25/KMP-algorithm/">Older Posts<span class="arrow">→</span></a></span></nav><div id="container"></div><link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css"><script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script><script>var gitment = new Gitment({
-id:  '预排序遍历树算法',
-owner: 'hslsdl123456',
-repo: 'test',
-oauth: {
-    client_id: '18f6cfbface82f7213b7',
-    client_secret: '31b6012408c0085c3462a665438c32530e3959d7',
-},
-})
-gitment.render('container')</script></article></section><footer id="footer"><p class="small">Powered by &nbsp;<a href="https://hexo.io/">Hexo &nbsp;</a></p></footer><script>hljs.initHighlightingOnLoad();</script></body></html>
+</section><nav id="post-nav"><span class="prev"><a href="/2020/07/31/python-yield/"><span class="arrow">←</span>Newer Posts</a></span><span class="next"><a href="/2020/04/25/KMP-algorithm/">Older Posts<span class="arrow">→</span></a></span></nav></article></section><div class="vcomment" id="vcomment"></div><script src="https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js"></script><script>var requestSetting = function (from,set) {
+  var from = from
+  var setting = set.split(',').filter(function(item){
+  return from.indexOf(item) > -1
+  });
+  setting = setting.length == 0 ? from :setting;
+  return setting
+}
+
+var guestInfo = requestSetting(['nick','mail'],'nick,mail')
+var requiredFields = requestSetting(['nick','mail'],'nick,mail')
+let friends = ''.split(',')
+let master = ''.split(',')
+let tagMeta = '博主,小伙伴,访客'.split(',')
+
+window.valine = new Valine({
+  el:'#vcomment',
+  appId: 'xyPW2KhRlveKqVFr34qURkOb-gzGzoHsz',
+  appKey: 'U7GYYnH1CaN0KecUgEm1HaUK',
+  notify: false,
+  verify: false,
+  placeholder: '写下您的评论',
+  avatar: 'monsterid',
+  meta: guestInfo,
+  pageSize: '10',
+  lang: 'zh-CN',
+  recordIP: 'false',
+  serverURLs: '',
+  emojiCDN: '',
+  emojiMaps: "",
+  enableQQ: false,
+  requiredFields: requiredFields,
+  master: master,
+  friends: friends,
+  tagMeta: tagMeta,
+  metaPlaceholder: {}
+});</script><footer id="footer"><p class="small">Powered by &nbsp;<a href="https://hexo.io/">Hexo &nbsp;</a></p></footer><script>hljs.initHighlightingOnLoad();</script></body></html>

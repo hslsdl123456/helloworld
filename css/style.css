@@ -938,3 +938,15 @@ a.symbol:hover {
 .page-tags ul li a:hover {
     color: #5694f1;
 }
+
+
+
+#vcomment{
+width:60%;
+padding:3%;
+background:#09F;
+position:absolute;
+top:0px;
+left:50%;
+margin-left:-30%;
+}
